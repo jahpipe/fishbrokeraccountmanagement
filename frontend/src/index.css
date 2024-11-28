@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Styles for printing */
+@media print {
+  body * {
+    visibility: hidden; /* Hide all elements */
+  }
+  .printable, .printable * {
+    visibility: visible; /* Show only printable area */
+  }
+
+  .printable {
+    position: absolute;
+    left: 0;
+    top: 0; /* Adjust this value to move content up or down */
+    width: 100%; /* Set width to 100% or adjust to desired width */
+    height: auto; /* Set height to auto or adjust to a specific height */
+    margin: 0; /* Remove any margin */
+    padding: 10px; /* Add padding for spacing */
+    background-color: transparent; /* Ensure no background color */
+    color: #000; /* Set text color to black for print */
+  }
+
+  .printable h2, .printable h3 {
+    font-size: 14px; /* Adjusted header font size */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-bottom: 1px solid #000; /* Underline for headers */
+  }
+
+  .printable p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .printable ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .printable li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+  }
+
+  .printable .section-divider {
+    border-top: 1px solid #000;
+    margin: 8px 0; /* Reduced margin for better fit */
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .printable .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px; /* Reduced margin */
+  }
+
+  .printable .table th, .printable .table td {
+    border: 1px solid #000;
+    padding: 3px; /* Reduced padding for thermal printer */
+    text-align: left;
+    font-size: 12px; /* Adjusted table font size */
+  }
+
+  .printable .table th {
+    background-color: transparent; /* Ensure table header has no background */
+  }
+}
